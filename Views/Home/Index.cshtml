@@ -1,16 +1,10 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
     var account = ViewBag.Account as Account;
-    var username = "";
+    var username = account.username;
 }
 
 <div class="text-center">
-    @{
-        if (account != null)
-        {
-            username = account.username;
-        }
-    }
-    <h1 class="display-4">Welcome @username </h1>
+    <h1 class="display-4">Welcome @username hihi</h1>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>

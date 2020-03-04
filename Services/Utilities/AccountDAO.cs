@@ -1,7 +1,7 @@
 using System;
 using System.Data;
 using blog.Models;
-using blog.Services.DAO;
+using blog.Services.Utilities;
 using Microsoft.Extensions.Configuration;
 using MySql.Data.MySqlClient;
 

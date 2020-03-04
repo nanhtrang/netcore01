@@ -3,7 +3,7 @@ using System.Data;
 using Microsoft.Extensions.Configuration;
 using MySql.Data.MySqlClient;
 
-namespace blog.Services.DAO
+namespace blog.Services.Utilities
 {
     public class DBContext
     {

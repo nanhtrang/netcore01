@@ -8,27 +8,29 @@ using Microsoft.Extensions.Logging;
 using blog.Models;
 using Microsoft.AspNetCore.Http;
 using blog.Services.Utilities;
+using Microsoft.Extensions.Caching.Distributed;
+using System.Text;
+using Newtonsoft.Json;
 
 namespace blog.Controllers
 {
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private IDistributedCache cache;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, IDistributedCache cache)
         {
             _logger = logger;
+            this.cache = cache;
         }
 
         public IActionResult Index()
         {
-            int? id = HttpContext.Session.GetInt32("accountid");
-            if (id != null)
-            {
-                AccountDAO accountDAO = new AccountDAO();
-                Account account = accountDAO.get((int)id);
-                ViewBag.Account = account;
-            }
+            var value =  this.cache.Get("account");
+            var json = Encoding.UTF8.GetString(value);
+            var account = JsonConvert.DeserializeObject<Account>(json);
+            ViewBag.account = account;
             return View();
         }
 

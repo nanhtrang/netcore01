@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/toan/Documents/learning/net core/blog/blog.csproj": {}
+    "/Users/toan/Documents/learning/net core/theblog/netcore01/blog.csproj": {}
   },
   "projects": {
-    "/Users/toan/Documents/learning/net core/blog/blog.csproj": {
+    "/Users/toan/Documents/learning/net core/theblog/netcore01/blog.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/toan/Documents/learning/net core/blog/blog.csproj",
+        "projectUniqueName": "/Users/toan/Documents/learning/net core/theblog/netcore01/blog.csproj",
         "projectName": "blog",
-        "projectPath": "/Users/toan/Documents/learning/net core/blog/blog.csproj",
+        "projectPath": "/Users/toan/Documents/learning/net core/theblog/netcore01/blog.csproj",
         "packagesPath": "/Users/toan/.nuget/packages/",
-        "outputPath": "/Users/toan/Documents/learning/net core/blog/obj/",
+        "outputPath": "/Users/toan/Documents/learning/net core/theblog/netcore01/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/toan/.nuget/NuGet/NuGet.Config"
@@ -39,6 +39,10 @@
             "MySql.Data": {
               "target": "Package",
               "version": "[8.0.19, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[12.0.3, )"
             }
           },
           "imports": [
