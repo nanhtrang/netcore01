@@ -27,7 +27,8 @@ namespace blog.Controllers
 
         public IActionResult Index()
         {
-            var value =  this.cache.Get("account");
+            // var value =  this.cache.Get("account");
+            var value =  HttpContext.Session.Get("account");
             var json = Encoding.UTF8.GetString(value);
             var account = JsonConvert.DeserializeObject<Account>(json);
             ViewBag.account = account;

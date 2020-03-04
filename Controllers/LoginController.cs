@@ -35,7 +35,8 @@ namespace blog.Controllers
         {
             var theAccount = this.loginService.Login(account.username, account.password);
             var byteAcc = Services.Utilities.Util.ConvertObjectToBytes(theAccount);
-            this.cache.Set("account", byteAcc);
+            // this.cache.Set("account", byteAcc);
+            HttpContext.Session.Set("account",byteAcc);
             return Redirect("../Home/Index");
         }
 

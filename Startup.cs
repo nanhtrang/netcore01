@@ -29,6 +29,9 @@ namespace blog
             services.AddDistributedMemoryCache();
             services.AddControllersWithViews();
             services.AddScoped<ILoginService, LoginService>();
+            services.AddSession(option => {
+                option.IdleTimeout = TimeSpan.FromSeconds(3600);
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -50,6 +53,7 @@ namespace blog
             app.UseRouting();
 
             app.UseAuthorization();
+            app.UseSession();
 
             app.UseEndpoints(endpoints =>
             {
